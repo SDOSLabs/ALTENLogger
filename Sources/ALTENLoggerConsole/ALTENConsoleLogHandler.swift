@@ -1,5 +1,5 @@
 //
-//  ALTENLogHandler.swift
+//  ALTENLoggerConsole.swift
 //  Rafita_app
 //
 //  Created by Rafael FERNANDEZ on 31/1/22.
@@ -12,15 +12,15 @@ import Darwin
 import ALTENLoggerCore
 
 /// Logger que devuelve la salida por consola
-public struct ALTENLogHandler: LogHandler {
-    /// Factory that makes a `ALTENLogHandler` to directs its output to `stdout`
-    public static func standardOutput(label: String) -> ALTENLogHandler {
-        return ALTENLogHandler(label: label, stream: StdioOutputStream.stdout)
+public struct ALTENLoggerConsole: LogHandler {
+    /// Factory that makes a `ALTENLoggerConsole` to directs its output to `stdout`
+    public static func standardOutput(label: String) -> ALTENLoggerConsole {
+        return ALTENLoggerConsole(label: label, stream: StdioOutputStream.stdout)
     }
 
-    /// Factory that makes a `ALTENLogHandler` to directs its output to `stderr`
-    public static func standardError(label: String) -> ALTENLogHandler {
-        return ALTENLogHandler(label: label, stream: StdioOutputStream.stderr)
+    /// Factory that makes a `ALTENLoggerConsole` to directs its output to `stderr`
+    public static func standardError(label: String) -> ALTENLoggerConsole {
+        return ALTENLoggerConsole(label: label, stream: StdioOutputStream.stderr)
     }
 
     private let stream: TextOutputStream
