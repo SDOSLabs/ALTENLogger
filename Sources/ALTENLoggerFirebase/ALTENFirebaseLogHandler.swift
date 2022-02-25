@@ -10,7 +10,6 @@ import Foundation
 import Logging
 import Darwin
 import FirebaseCrashlytics
-import ALTENLoggerConsole
 import ALTENLoggerCore
 
 /// Logger que envía los datos a `FirebaseCrashlytics`
