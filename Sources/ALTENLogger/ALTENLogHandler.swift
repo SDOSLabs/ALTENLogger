@@ -11,23 +11,27 @@ import Logging
 import Darwin
 import ALTENLoggerCore
 
+/// Logger que devuelve la salida por consola
 public struct ALTENLogHandler: LogHandler {
-    /// Factory that makes a `StreamLogHandler` to directs its output to `stdout`
+    /// Factory that makes a `ALTENLogHandler` to directs its output to `stdout`
     public static func standardOutput(label: String) -> ALTENLogHandler {
         return ALTENLogHandler(label: label, stream: StdioOutputStream.stdout)
     }
 
-    /// Factory that makes a `StreamLogHandler` to directs its output to `stderr`
+    /// Factory that makes a `ALTENLogHandler` to directs its output to `stderr`
     public static func standardError(label: String) -> ALTENLogHandler {
         return ALTENLogHandler(label: label, stream: StdioOutputStream.stderr)
     }
 
     private let stream: TextOutputStream
     private let label: String
-
+    
+    /// Nivel de log a partir del cual mostrará la información
     public var logLevel: Logger.Level = .info
 
     private var prettyMetadata: String?
+    
+    /// Metadatos globales del log que se incluirán en cada llamada al log
     public var metadata = Logger.Metadata() {
         didSet {
             self.prettyMetadata = self.prettify(self.metadata)

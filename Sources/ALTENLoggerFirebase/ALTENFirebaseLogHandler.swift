@@ -13,13 +13,14 @@ import FirebaseCrashlytics
 import ALTENLogger
 import ALTENLoggerCore
 
+/// Logger que envía los datos a `FirebaseCrashlytics`
 public struct ALTENFirebaseLogHandler: LogHandler {
-    /// Factory that makes a `StreamLogHandler` to directs its output to `stdout`
+    /// Factory that makes a `ALTENFirebaseLogHandler` to directs its output to `stdout`
     public static func standardOutput(label: String, crashlytics: Crashlytics) -> ALTENFirebaseLogHandler {
         return ALTENFirebaseLogHandler(label: label, stream: StdioOutputStream.stdout, crashlytics: crashlytics)
     }
 
-    /// Factory that makes a `StreamLogHandler` to directs its output to `stderr`
+    /// Factory that makes a `ALTENFirebaseLogHandler` to directs its output to `stderr`
     public static func standardError(label: String, crashlytics: Crashlytics) -> ALTENFirebaseLogHandler {
         return ALTENFirebaseLogHandler(label: label, stream: StdioOutputStream.stderr, crashlytics: crashlytics)
     }
