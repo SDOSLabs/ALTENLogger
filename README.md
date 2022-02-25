@@ -12,7 +12,7 @@
 ## Introducción
 `ALTENLogger` es una librería que se apoya en la librería `Logging` proporcionada por Apple en el [siguiente enlace](https://github.com/apple/swift-log.git). La librería `Logging` permite la creación de `Loggers` para personalizar la salida de los logs.
 ALTENLogger proporciona dos `Loggers` que podemos usar en cualquier proyecto:
-- `ALTENLogHandler`: Permite trazar logs que serán mostrados por consola
+- `ALTENLoggerConsole`: Permite trazar logs que serán mostrados por consola
 - `ALTENFirebaseLogHandler`: Permite trazar logs que serán enviados a `Firebase`
 
 ## Instalación
@@ -75,14 +75,14 @@ De forma recomendada se puede añadir un fichero al proyecto con la siguiente im
 
 import Foundation
 import Logging
-import ALTENLogger
+import ALTENLoggerConsole
 import ALTENLoggerFirebase
 import FirebaseCrashlytics
 
 public let logger: Logger = {
     var logger = Logger(label: Bundle.main.bundleIdentifier ?? "AppLogger") {
         MultiplexLogHandler([
-            ALTENLogHandler.standardOutput(label: $0),
+            ALTENLoggerConsole.standardOutput(label: $0),
             ALTENFirebaseLogHandler.standardOutput(label: $0, crashlytics: Crashlytics.crashlytics())
         ])
     }

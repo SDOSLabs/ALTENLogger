@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "ALTENLoggerConsole",
-            targets: ["ALTENLogger"]),
+            targets: ["ALTENLoggerConsole"]),
         .library(
             name: "ALTENLoggerFirebase",
             targets: ["ALTENLoggerFirebase"])
@@ -30,14 +30,14 @@ let package = Package(
                 .product(name: "Logging", package: "swift-log")
             ]),
         .target(
-            name: "ALTENLogger",
+            name: "ALTENLoggerConsole",
             dependencies: [
                 "ALTENLoggerCore"
             ]),
         .target(
             name: "ALTENLoggerFirebase",
             dependencies: [
-                "ALTENLogger",
+                "ALTENLoggerCore",
                 .product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk")
             ])
     ]
