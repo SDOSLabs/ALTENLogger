@@ -1,9 +1,7 @@
 //
 //  ALTENConsoleLogHandler.swift
-//  Rafita_app
 //
-//  Created by Rafael FERNANDEZ on 31/1/22.
-//  Copyright © 2022 company_app. All rights reserved.
+//  Copyright © 2022 ALTEN. All rights reserved.
 //
 
 import Foundation
