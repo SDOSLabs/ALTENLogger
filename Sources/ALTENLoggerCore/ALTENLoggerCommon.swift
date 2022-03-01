@@ -1,8 +1,7 @@
 //
-//  File.swift
-//  
+//  ALTENLoggerCommon.swift
 //
-//  Created by Rafael FERNANDEZ on 9/2/22.
+//  Copyright © 2022 ALTEN. All rights reserved.
 //
 
 import Foundation
